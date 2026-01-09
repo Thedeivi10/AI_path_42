@@ -20,8 +20,22 @@ except:
     print("Error loading dataset_train.csv")
     exit(1)
 
+titles = raw_data.columns[6:].tolist()
 data = raw_data.iloc[:, 6:].to_numpy()
 
-for i,l in enumerate(data):
-    print(l)
-    if i > 4: break
+def metric(function, colum):
+    for i,v in enumerate(titles):
+        if i < len(titles) - 1: print(f'{titles[i]}\t', end='')
+        else: print(titles[i])
+
+
+count = lambda lst: len(lst)
+
+
+print('\t\t',end='')
+for i,v in enumerate(titles):
+    if i < len(titles) - 1: print(f'{titles[i]}\t', end='') 
+    else: print(titles[i])
+
+""" Count """
+print('Count\t',end='')
